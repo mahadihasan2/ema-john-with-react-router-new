@@ -1,0 +1,42 @@
+.from-container {
+    width: 600px;
+    border: 1px solid #543654;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.from-title {
+    font-size: 35px;
+    font-weight: 800;
+    color: #543654;
+}
+
+.from-input {
+    margin-bottom: 20px;
+}
+
+.from-input label {
+    display: block;
+
+
+}
+
+.from-input input {
+    width: 400px;
+    height: 40px;
+    border: 1px solid #542345;
+    border-radius: 5px;
+}
+
+.from-submit {
+    width: 400px;
+    height: 40px;
+    background-color: rgba(241, 151, 15, 0.864);
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
