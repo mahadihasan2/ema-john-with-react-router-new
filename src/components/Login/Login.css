@@ -39,4 +39,9 @@
     border-radius: 5px;
     border: none;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.from-submit:hover {
+    background-color: rgba(162, 104, 43, 0.899);
 }

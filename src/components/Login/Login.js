@@ -10,12 +10,12 @@ const Login = () => {
                 <form action="">
                     <div className='from-input'>
                         <label htmlFor="email">E-mail</label>
-                        <input type="email" name='email' />
+                        <input type="email" name='email' required />
 
                     </div>
                     <div className="from-input">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name='password' />
+                        <input type="password" name='password' required />
                     </div>
 
                     <input className='from-submit' type="submit" value='Login' />
