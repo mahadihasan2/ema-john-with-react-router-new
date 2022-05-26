@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,10 @@ import './Header.css';
 
 const Header = () => {
     const [user] = useAuthState(auth)
+
+    const handleSignOut = () => {
+        signOut(auth);
+    }
     return (
         <nav className='header'>
             <img src={logo} alt="" />
@@ -17,7 +22,7 @@ const Header = () => {
                 <Link to="/about">About</Link>
                 {
                     user ?
-                        <button>Sign Out</button>
+                        <button onClick={handleSignOut}>Sign Out</button>
                         :
                         <Link to='/login'>Login</Link>
                 }
