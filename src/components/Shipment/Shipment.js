@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Shipment = () => {
-
+    const [user] = useAuthState(auth)
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [address, setAddress] = useState('')
@@ -11,6 +13,9 @@ const Shipment = () => {
 
     const handleCreateUserOnSubmit = event => {
         event.preventDefault()
+        const shipping = (name, email, address, phone)
+        console.log(shipping)
+
         if (address !== phone) {
             error('your to password did not match')
             return;
@@ -20,7 +25,7 @@ const Shipment = () => {
             setError('please password over the 6 digit')
             return;
         }
-        // createUserWithEmailAndPassword(email, password)
+        // // createUserWithEmailAndPassword(email, password)
     }
 
     const handleNameBlur = event => {
@@ -28,10 +33,10 @@ const Shipment = () => {
         console.log(name)
     }
 
-    const handleEmailBlur = event => {
-        setEmail(event.target.value)
-        console.log(email)
-    }
+    // const handleEmailBlur = event => {
+    //     setEmail(event.target.value)
+    //     console.log(email)
+    // }
 
     const handleAddressBlur = event => {
         setAddress(event.target.value)
@@ -56,7 +61,7 @@ const Shipment = () => {
                     </div>
                     <div className='from-input'>
                         <label htmlFor="email">E-mail</label>
-                        <input onBlur={handleEmailBlur} type="email" name='email' required />
+                        <input value={user?.email} readOnly type="email" name='email' required />
 
                     </div>
                     <div className="from-input">
